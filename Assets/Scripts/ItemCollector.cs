@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class itemCollector : MonoBehaviour
+public class ItemCollector : MonoBehaviour
 {
     private int cherries = 0;
 

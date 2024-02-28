@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D charRigidBody;
     private BoxCollider2D boxCollider;

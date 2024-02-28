@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class waypointFollower : MonoBehaviour
+public class WaypointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;

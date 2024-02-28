@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerLife : MonoBehaviour
+public class PlayerLife : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     private Animator anim;
