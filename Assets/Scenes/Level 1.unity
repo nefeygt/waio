@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3736e600c7c6f4caaff92b1ec6b3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cherryText: {fileID: 997980920}
+  fruitText: {fileID: 997980920}
   collectionSoundEffect: {fileID: 109433667}
 --- !u!114 &109433665
 MonoBehaviour:
@@ -75899,7 +75899,7 @@ GameObject:
   - component: {fileID: 997980921}
   - component: {fileID: 997980920}
   m_Layer: 5
-  m_Name: Cherries
+  m_Name: Fruits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75957,7 +75957,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cherries: 0'
+  m_Text: 'Fruits: 0'
 --- !u!222 &997980921
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -76152,7 +76152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148063083}
   m_Layer: 0
-  m_Name: Cherries
+  m_Name: Fruits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
