@@ -72115,7 +72115,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -72142,7 +72142,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.209, y: 0.749, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76090,7 +76090,7 @@ PrefabInstance:
       objectReference: {fileID: 437153632}
     - target: {fileID: 7668539719146306240, guid: 117d52a70f41dfa4380b960d20392d20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.27
+      value: 7.77
       objectReference: {fileID: 0}
     - target: {fileID: 7668539719146306240, guid: 117d52a70f41dfa4380b960d20392d20, type: 3}
       propertyPath: m_LocalPosition.y
@@ -77186,6 +77186,10 @@ PrefabInstance:
     - target: {fileID: 3269264046871820861, guid: 676afd743462d2e48bd36379a9520942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629231863237858552, guid: 676afd743462d2e48bd36379a9520942, type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4629231863237858552, guid: 676afd743462d2e48bd36379a9520942, type: 3}
       propertyPath: waypoints.Array.data[0]
