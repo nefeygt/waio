@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +10,14 @@ public class PlayerLife : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private AudioSource deathSoundEffect;
+
+    private int tempFruit;
     
     private void Start()
     {
         //rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        tempFruit = ItemCollector.TotalCollectedFruits;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -34,5 +38,6 @@ public class PlayerLife : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ItemCollector.TotalCollectedFruits = tempFruit;
     }
 }

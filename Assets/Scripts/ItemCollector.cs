@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
     private int fruits = 0;
+    public static int TotalCollectedFruits = 0;
+    public const int TotalFruits = 64;
 
     [SerializeField] private Text fruitText;
 
@@ -18,6 +20,7 @@ public class ItemCollector : MonoBehaviour
             collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             fruits++;
+            TotalCollectedFruits++;
             fruitText.text = "Fruits: " + fruits;
         }
     }
