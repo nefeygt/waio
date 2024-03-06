@@ -466,7 +466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitText: {fileID: 997980920}
-  totalText: {fileID: 0}
   collectionSoundEffect: {fileID: 109433667}
 --- !u!114 &109433665
 MonoBehaviour:
@@ -71968,7 +71967,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472863008}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
@@ -72079,7 +72078,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472863008}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4d8d37615ffe81849a695de3b8aad2e2, type: 3}
