@@ -8,8 +8,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    InputActions controls;
-    
     private Rigidbody2D charRigidBody;
     private BoxCollider2D boxCollider;
     private SpriteRenderer sprite;
@@ -24,37 +22,6 @@ public class PlayerMovement : MonoBehaviour
     private enum MovementState { idle, running, jumping, falling }
 
     [SerializeField] private AudioSource jumpSoundEffect;
-
-    private void Awake()
-    {
-        controls = new InputActions();
-        controls.Enable();
-
-        controls.Game.Movement.performed += ctx =>
-        {
-            dirX = ctx.ReadValue<float>();
-        };
-
-        controls.Game.Jump.performed += ctx => Jump();
-    }
-
-    void Jump()
-    {
-        if (IsGrounded())
-        {
-            charRigidBody.velocity = new Vector2(charRigidBody.velocity.x, jumpForce);
-        }
-    }
-
-    private void OnEnable()
-    {
-        controls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.Disable();
-    }
 
     // Start is called before the first frame update
     private void Start()
