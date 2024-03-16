@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerInputActions playerControls;
+    
     private Rigidbody2D charRigidBody;
     private BoxCollider2D boxCollider;
     private SpriteRenderer sprite;
@@ -15,13 +17,46 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;
 
-    private float dirX = 0f;
+    //private float dirX = 0f;
+    private Vector2 moveDirection = Vector2.zero;
+    private InputAction move;
+    private InputAction jump;
+    
     [SerializeField] private float movementSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
     private enum MovementState { idle, running, jumping, falling }
 
     [SerializeField] private AudioSource jumpSoundEffect;
+
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+    }
+
+    private void OnEnable()
+    {
+        move = playerControls.Player.Move;
+        move.Enable();
+
+        jump = playerControls.Player.Jump;
+        jump.Enable();
+        
+        jump.performed += ctx => Jump();
+    }
+
+    void Jump()
+    {
+        if (IsGrounded())
+        {
+            charRigidBody.velocity = new Vector2(charRigidBody.velocity.x, jumpForce);
+        }
+    }
+    private void OnDisable()
+    {
+        move.Disable();
+        jump.Disable();
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -35,8 +70,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        charRigidBody.velocity = new Vector2(dirX * movementSpeed, charRigidBody.velocity.y);
+        //dirX = Input.GetAxisRaw("Horizontal");
+        moveDirection = move.ReadValue<Vector2>();
+        
+        charRigidBody.velocity = new Vector2(moveDirection.x * movementSpeed, charRigidBody.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -51,12 +88,12 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState state;
 
-        if (dirX > 0f)
+        if (moveDirection.x > 0f)
         {
             state = MovementState.running;
             sprite.flipX = false;
         }
-        else if (dirX < 0f)
+        else if (moveDirection.x < 0f)
         {
             state = MovementState.running;
             sprite.flipX = true;
