@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    //private PlayerMovement pm;
+    
     [SerializeField] private Rigidbody2D rb;
     private Animator anim;
 
@@ -15,9 +17,10 @@ public class PlayerLife : MonoBehaviour
     
     private void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         tempFruit = ItemCollector.TotalCollectedFruits;
+        //pm = GetComponent<PlayerMovement>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,6 +35,8 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        //rb.velocity = Vector2.zero;
+        //pm.movementSpeed = 0;
         anim.SetTrigger("death");
     }
 
