@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            charRigidBody.velocity = new Vector2(charRigidBody.velocity.x, jumpForce);
+            charRigidBody.linearVelocity = new Vector2(charRigidBody.linearVelocity.x, jumpForce);
         }
     }
     private void OnDisable()
@@ -73,12 +73,12 @@ public class PlayerMovement : MonoBehaviour
         //dirX = Input.GetAxisRaw("Horizontal");
         moveDirection = move.ReadValue<Vector2>();
         
-        charRigidBody.velocity = new Vector2(moveDirection.x * movementSpeed, charRigidBody.velocity.y);
+        charRigidBody.linearVelocity = new Vector2(moveDirection.x * movementSpeed, charRigidBody.linearVelocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             jumpSoundEffect.Play();
-            charRigidBody.velocity = new Vector2(charRigidBody.velocity.x, jumpForce);
+            charRigidBody.linearVelocity = new Vector2(charRigidBody.linearVelocity.x, jumpForce);
         }
 
         UpdateAnimationState();
@@ -103,11 +103,11 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (charRigidBody.velocity.y > .1f)
+        if (charRigidBody.linearVelocity.y > .1f)
         {
             state = MovementState.jumping;
         }
-        else if (charRigidBody.velocity.y < -.1f)
+        else if (charRigidBody.linearVelocity.y < -.1f)
         {
             state = MovementState.falling;
         }
