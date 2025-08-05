@@ -18,7 +18,9 @@ public class ItemCollector : MonoBehaviour
         if(collision.gameObject.CompareTag("Fruit"))
         {
             collectionSoundEffect.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            // Use object pooling instead of destroying the object
+            collision.gameObject.SetActive(false);
             fruits++;
             TotalCollectedFruits++;
             fruitText.text = "Fruits: " + fruits;
