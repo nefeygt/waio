@@ -49,3 +49,6 @@ TagManager:
   - name: Terrain
     uniqueID: 3247423837
     locked: 0
+  - name: Pause
+    uniqueID: 1339928141
+    locked: 0
