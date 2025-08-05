@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3736e600c7c6f4caaff92b1ec6b3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cherryText: {fileID: 0}
+  fruitText: {fileID: 0}
   collectionSoundEffect: {fileID: 7579525839456887189}
 --- !u!114 &3299822750685998296
 MonoBehaviour:

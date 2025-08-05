@@ -745,7 +745,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   movementSpeed: 7
-  jumpForce: 16
+  jumpForce: 15
   jumpSoundEffect: {fileID: 109433666}
 --- !u!95 &109433663
 Animator:
