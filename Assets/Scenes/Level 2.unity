@@ -299,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &61367098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -542,7 +542,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   movementSpeed: 7
-  jumpForce: 14
+  jumpForce: 16
   jumpSoundEffect: {fileID: 109433666}
 --- !u!95 &109433663
 Animator:
